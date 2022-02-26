@@ -12,4 +12,14 @@ contract WorkingWithVariables {
     function setMyBool(bool _myBool) public {
         myBool = _myBool;
     }
+
+    uint8 public myUnint8;
+
+    function incrementUnit() public {
+        myUnint8++;
+    }
+
+    function decrementUnit() public {
+        myUnint8--;
+    }
 }
