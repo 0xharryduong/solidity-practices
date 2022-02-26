@@ -6,4 +6,10 @@ contract WorkingWithVariables {
     function setMyUnit(uint _myUint) public {
         myUint = _myUint;
     }
+
+    bool public myBool;
+
+    function setMyBool(bool _myBool) public {
+        myBool = _myBool;
+    }
 }
