@@ -1,6 +1,7 @@
 pragma solidity ^0.8.7;
 
 contract WorkingWithVariables {
+    // uint256 => 2^256
     uint256 public myUint;
 
     function setMyUnit(uint _myUint) public {
@@ -13,7 +14,8 @@ contract WorkingWithVariables {
         myBool = _myBool;
     }
 
-    uint8 public myUnint8;
+    // int8 from -128 => 127 | uint8 from 0 => 255
+    uint8 public myUnint8; // uint8-- => 256**
 
     function incrementUnit() public {
         myUnint8++;
