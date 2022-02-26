@@ -32,4 +32,12 @@ contract WorkingWithVariables {
     function getBalanceOfAddress() public view returns(uint) {
         return myAdress.balance;
     }
+
+    string public myString = 'harry duong';
+
+    // not like the other languagues, solidity is not made for really working with string or large string
+    // working with string in solidity is expensive => need alot of gas => alot of ether for the fee
+    function setMyString(string memory _myString) public { // when use string or others references type, must enter memory (store in memory)
+        myString = _myString;
+    }
 }
