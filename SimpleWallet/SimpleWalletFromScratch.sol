@@ -1,4 +1,4 @@
-pragma solidity ^0.5.13;
+pragma solidity ^0.8.7;
 
 contract SimpleWallet {
 
@@ -16,7 +16,8 @@ contract SimpleWallet {
         _to.transfer(_amount);
     }
 
-    function () external payable {
+
+    fallback() external payable {
         
     }
 }
