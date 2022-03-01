@@ -36,7 +36,7 @@ contract Item {
         require(priceInWei == msg.value, "Only full payment wallowed already");
         pricePaid += msg.value;
         (bool success,) = address(parentContract).call{value: msg.value}(abi.encodeWithSignature("triggerPayment(uint(256)", index));
-        require(success, "the transaction wasn't successful, caceling");
+        require(success, "the transaction wasn't successful, canceling");
     }
 
     fallback() external {}
