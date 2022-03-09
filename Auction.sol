@@ -46,6 +46,7 @@ contract SimpleAuction {
                 pendingReturns[msg.sender] = amount;
                 return false;
             }
+            // Todo: Should mark the highest bid info for the second runner?
         }
         return true;
     }
