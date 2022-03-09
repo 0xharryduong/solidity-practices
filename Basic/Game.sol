@@ -10,17 +10,25 @@ contract Game {
     struct Player {
         address addressPlayer;
         string fullname;
-        Level myLevel;
+        Level playerLevel;
         uint age;
         string sex;
+        uint createTime;
     }
 
     function addPlayer(string memory fullName, uint age, string memory sex) public {
-        players[msg.sender] = Player(msg.sender, fullName, Level.Beginer, age, sex);
+        players[msg.sender] = Player(msg.sender, fullName, Level.Beginer, age, sex, block.timestamp);
         countPlayer += 1;
     }
 
     function getPlayerLevel(address addressPayer) public view returns (Level) {
-        return players[addressPayer].myLevel;
+        return players[addressPayer].playerLevel;
+    }
+
+    function changePayerLevel(address playerAddress) public {
+        Player storage player = players[playerAddress];
+        if (block.timestamp >= player.createTime + 20) {
+            player.playerLevel = Level.Intermediate;
+        }
     }
 }
